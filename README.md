@@ -1,4 +1,6 @@
-# ChatGPT, Bard, googletrans, papagotrans, deepltrans API사용하여 Streamlit Web 페이지 개발 및 배포
+# ChatGPT_API_Application
+
+> ChatGPT, Bard, googletrans, papagotrans, deepltrans API사용하여 Streamlit Web 페이지 개발 및 배포 프로젝트
 
 # ch01, ch02
 
@@ -50,7 +52,7 @@ layout, colunms, sidebar, tab
 
 ### 01_bard_api_test.py
 
-bard api 사용하여 간단한 질의응답 테스트
+bard api 사용하여 간단한 질의응답 테스트 (bard api 불안정)
 
 ### 02_session_state.py
 
@@ -82,7 +84,7 @@ ChatGPT, 파파고번역기, 구글 번역기, deepl번역기 비교 웹 프로�
 
 ### 01_dalle2.py
 
-dalle_2모델을 사용하여 적절한 프롬프트 입력 시 이미지 url 생성
+dalle_2모델을 사용하여 적절한 프롬프트 입력 시 이미지 url 생성 -> 이미지 생성
 
 ### 02_insta.py
 
@@ -96,13 +98,13 @@ conda config --set auto_activate_base false
 
 ### 파이썬 가상환경 (window)
 
-python -m venv 가상환경이름
+python -m venv 가상환경이름  
 가상환경이름₩Scripts₩activate.bat (bat을 붙이는 이유 : 파일 2개일수도 있음)
 
 ### 파이썬 가상환경 ( macOS )
 
-가상환경 만들기 : python3 -m venv ./{your venv name}
-가상환경 활성화 : source {your venv name}/bin/activate
+가상환경 만들기 : python3 -m venv ./{your venv name}  
+가상환경 활성화 : source {your venv name}/bin/activate  
 가상환경 비활성화 : deactivate
 
 ### 파이썬 가상환경 사용이유
@@ -112,10 +114,10 @@ python -m venv 가상환경이름
 
 # error
 
-### git pull error
+### 1. git pull error
 
-_git pull origin master error_
-fatal: couldn't find remote ref master
+_git pull origin master error_  
+fatal: couldn't find remote ref master  
 fatal: Need to specify how to reconcile divergent branches.  
 -> 해결 종류 (3중 택1)
 
@@ -126,12 +128,12 @@ fatal: Need to specify how to reconcile divergent branches.
 - rebase : 새 브랜치가 시작된 분기점 커밋을 기준 브랜치의 가장 최근커밋으로 변경하는 작업
 - rebase는 git history가 깔끔해질 수 있지만, 부주의하게 사용할 경우 별도의 알림없이 git history를 영구적으로 변경할 수 있기 때문에 ff-only방식을 추천
 
-### googletrans _AttributeError: 'NoneType' object has no attribute 'group'_ 에러
+### 2. googletrans _AttributeError: 'NoneType' object has no attribute 'group'_ 에러
 
-: 버전 변경
-`pip install googletrans==5` : googletrans 버전 리스트 뽑아줌
+: 버전 변경  
+`pip install googletrans==5` : googletrans 버전 리스트 뽑아줌  
 `pip install googletrans==3.1.0a0` : 3.1.0a0 버전 재설치
 
-### googletrans _AttributeError: module 'httpcore' has no attribute 'SyncHTTPTransport'_ 싱크해결
+### 3. googletrans _AttributeError: module 'httpcore' has no attribute 'SyncHTTPTransport'_ 싱크해결
 
 : client.py 파일 수정 , 55번줄 SyncHTTPTransport 객체를 AsyncHTTPProxy로 대체, httpx 호환성문제
